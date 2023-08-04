@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  added_point_total: 1
+  discount_point_total: 1
+  used_point_total: 1
+  summary_date: 2023-08-04 17:07:03
+
+two:
+  user_id: 1
+  added_point_total: 1
+  discount_point_total: 1
+  used_point_total: 1
+  summary_date: 2023-08-04 17:07:03
