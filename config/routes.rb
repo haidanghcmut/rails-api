@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   namespace :api do
-    resources :users do
-      collection do
-         post 'created with login'
-      end
-    end
+    resources :users, only: [:create]
+    resources :user_ticket, only: [:create, :index, :show]
   end
 end

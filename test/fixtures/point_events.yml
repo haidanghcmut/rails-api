@@ -1,4 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: point_events
+#
+#  id               :integer          not null, primary key
+#  even_type        :integer
+#  point_event_date :datetime
+#  points           :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  user_id          :integer
+#
 
 one:
   user_id: 1

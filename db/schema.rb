@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_04_100823) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_07_101822) do
   create_table "point_event_summaries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "added_point_total"
@@ -43,8 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_04_100823) do
     t.datetime "time_buy_ticket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "ticket_id", null: false
-    t.index ["ticket_id"], name: "index_user_tickets_on_ticket_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,16 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_04_100823) do
     t.integer "remain_points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_ticket_id", null: false
-    t.integer "point_event_id", null: false
-    t.integer "point_event_summary_id", null: false
-    t.index ["point_event_id"], name: "index_users_on_point_event_id"
-    t.index ["point_event_summary_id"], name: "index_users_on_point_event_summary_id"
-    t.index ["user_ticket_id"], name: "index_users_on_user_ticket_id"
   end
 
-  add_foreign_key "user_tickets", "tickets"
-  add_foreign_key "users", "point_event_summaries"
-  add_foreign_key "users", "point_events"
-  add_foreign_key "users", "user_tickets"
 end
