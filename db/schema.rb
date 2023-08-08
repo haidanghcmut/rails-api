@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_07_101822) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_062650) do
   create_table "point_event_summaries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "added_point_total"
@@ -36,6 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_101822) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_tickets_id", null: false
+    t.index ["user_tickets_id"], name: "index_tickets_on_user_tickets_id"
   end
 
   create_table "user_tickets", force: :cascade do |t|
@@ -54,4 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_101822) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "tickets", "user_tickets", column: "user_tickets_id"
 end
